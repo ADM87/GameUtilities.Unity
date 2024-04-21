@@ -1,14 +1,14 @@
 {
-    "name": "<your package name here>",
-    "displayName": "<your display name here>",
-    "author": "<your name here>",
-    "version": "<your version here>",
-    "unity": "<your unity version here>",
+    "name": "com.adm87.gameutilities",
+    "displayName": "Game Utilities Unity",
+    "author": "Aaron Malley",
+    "version": "0.0.1",
+    "unity": "2022.3",
     "hideInEditor": false,
-    "description": "<your description here>",
+    "description": "My libary of game utilities I like to use when working in Unity.",
     "repository": {
-      "url": "<your repository here>",
+      "url": "https://github.com/ADM87/GameUtilities",
       "type": "git"
     },
-    "license": "<your license here>"
+    "license": "MIT"
 }
