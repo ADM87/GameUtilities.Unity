@@ -50,7 +50,7 @@ jobs:
           sed -i "s/\"version\": \".*\"/\"version\": \"${{ env.VERSION_TAG }}\"/" package.json
           git add .
           git commit -m "Version ${{ env.VERSION_TAG }}"
-          git push origin main
+          git push --force origin main
           if [ $? -eq 0 ]; then
             git tag ${{ env.VERSION_TAG }} -m "Version ${{ env.VERSION_TAG }}"
             git push origin ${{ env.VERSION_TAG }}
