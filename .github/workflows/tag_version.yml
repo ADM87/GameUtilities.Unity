@@ -20,20 +20,9 @@ jobs:
             echo "Branch name does not start with major/, minor/, or patch/. Ignoring versioning."
           fi
 
-      - name: Generate Token
-        if: ${{ env.VERSION_TYPE != 'ignore' }}
-        id: app-token
-        uses: actions/create-github-app-token@v1
-        with:
-          app-id: ${{ vars.APP_ID }}
-          private-key: ${{ secrets.APP_KEY }}
-
       - name: Checkout
         if: ${{ env.VERSION_TYPE != 'ignore' }}
         uses: actions/checkout@v4
-        with:
-          token: ${{ steps.app-token.outputs.token }}
-          persist-credentials: true
 
       - name: Create Version
         if: ${{ env.VERSION_TYPE != 'ignore' }}
@@ -47,13 +36,5 @@ jobs:
           git config user.name "${{ secrets.GIT_USER }}"
           git config user.email "${{ secrets.GIT_EMAIL }}"
           echo "VERSION_TAG=${{ env.VERSION_TAG }}"
-          sed -i "s/\"version\": \".*\"/\"version\": \"${{ env.VERSION_TAG }}\"/" package.json
-          git add .
-          git commit -m "Version ${{ env.VERSION_TAG }}"
-          git push --force origin main
-          if [ $? -eq 0 ]; then
-            git tag ${{ env.VERSION_TAG }} -m "Version ${{ env.VERSION_TAG }}"
-            git push origin ${{ env.VERSION_TAG }}
-          else
-            echo "Push to main branch failed. Skipping tag creation."
-          fi
+          git tag ${{ env.VERSION_TAG }} -m "Version ${{ env.VERSION_TAG }}"
+          git push origin ${{ env.VERSION_TAG }}
