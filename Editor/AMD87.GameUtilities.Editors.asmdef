@@ -1,0 +1,20 @@
+{
+    "name": "AMD87.GameUtilities.Editors",
+    "rootNamespace": "AMD87.GameUtilities.Editors",
+    "references": [
+        "GUID:73fe1f9d0cefff64f9fab9c1e1f0cda9"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "GameUtilities.Runtime.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
