@@ -1,4 +1,4 @@
-using ADM87.GameUtilities.ServiceProvider;
+using ADM87.GameUtilities.Services;
 using UnityEngine;
 
 namespace AMD87.GameUtilities
@@ -8,7 +8,7 @@ namespace AMD87.GameUtilities
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
         private static void Initialize()
         {
-            Services.CollectServiceDefinitions();
+            ServiceProvider.CollectServiceDefinitions();
         }
     }
 }
