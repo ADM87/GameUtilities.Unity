@@ -8,7 +8,7 @@ namespace AMD87.GameUtilities
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
         private static void Initialize()
         {
-            ServiceProvider.CollectServiceDefinitions();
+            ServiceLocator.CollectServiceDefinitions();
         }
     }
 }
