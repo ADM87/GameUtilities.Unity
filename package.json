@@ -2,7 +2,7 @@
     "name": "com.adm87.gameutilities",
     "displayName": "Game Utilities Unity",
     "author": "Aaron Malley",
-    "version": "0.0.21",
+    "version": "0.0.22",
     "unity": "2022.3",
     "hideInEditor": false,
     "description": "My libary of game utilities I like to use when working in Unity.",
